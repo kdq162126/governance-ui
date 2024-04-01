@@ -11,7 +11,7 @@ const ENDPOINTS: EndpointInfo[] = [
   },
   {
     name: 'devnet',
-    url: process.env.DEVNET_RPC || 'https://api.dao.devnet.solana.com/',
+    url: process.env.DEVNET_RPC || 'https://realms-develope-935c.devnet.rpcpool.com/67f608dc-a353-4191-9c34-293a5061b536/',
   },
   {
     name: 'localnet',
@@ -44,7 +44,7 @@ export function getConnectionContext(cluster: string): ConnectionContext {
 export function getNetworkFromEndpoint(endpoint: string) {
   const network = ENDPOINTS.find((e) => e.url === endpoint)
   if (!network) {
-    console.log(endpoint, ENDPOINTS)
+    console.log('.............................', endpoint, ENDPOINTS)
     throw new Error(`Network not found for endpoint: ${endpoint}`)
   }
   return network?.name

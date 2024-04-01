@@ -6,4 +6,4 @@ export const MAINNET_RPC =
 export const DEVNET_RPC =
   process.env.NEXT_PUBLIC_DEVNET_RPC ||
   process.env.DEVNET_RPC ||
-  'https://mango.devnet.rpcpool.com'
+  'https://realms-develope-935c.devnet.rpcpool.com/67f608dc-a353-4191-9c34-293a5061b536/'

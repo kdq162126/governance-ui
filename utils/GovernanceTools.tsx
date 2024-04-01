@@ -15,6 +15,32 @@ export const getProposals = async (
   connection: ConnectionContext,
   programId: PublicKey
 ) => {
+  const data = {
+    url: connection.endpoint,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: JSON.stringify([
+      ...pubkeys.map((x) => {
+        return getProposalsFilter(
+          programId,
+          connection,
+          bs58.encode(Uint8Array.from([GovernanceAccountType.ProposalV1])),
+          x
+        )
+      }),
+      ...pubkeys.map((x) => {
+        return getProposalsFilter(
+          programId,
+          connection,
+          bs58.encode(Uint8Array.from([GovernanceAccountType.ProposalV2])),
+          x
+        )
+      }),
+    ]),
+  }
+  console.log(data)
   const proposalsRaw = await axios.request({
     url: connection.endpoint,
     method: 'POST',

@@ -99,6 +99,8 @@ export default function VoteProposalModal({
         governanceAuthority
       )
 
+      console.log('...........................................')
+
       // if (comment.length > 0) {
       //   const msg = new ChatMessageBody({
       //     type: ChatMessageBodyType.Text,
